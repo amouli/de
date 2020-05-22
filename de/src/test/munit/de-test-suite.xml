@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="de-test-suite.xml" />
+	<munit:test name="de-test-suite-deFlowTest" doc:id="27ec8e88-4127-48ae-a7e8-911a25836b00" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to deFlow" doc:id="581a6def-b53e-4835-b8f2-f5dbec73d9df" name="deFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="5e8c6ee5-2bfd-4bf1-b290-d0eccd6ae429" actual="#[payload]" expected='#["mule"]'/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
